@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  //constructor(private primengConfig: PrimeNGConfig) {}
   name: string = 'Carlos';
   value: number = 230023;
   obj = {
@@ -14,5 +17,9 @@ export class AppComponent {
   showName() {
     console.log(this.name);
   }
+
+  // ngOnInit() {
+  //   this.primengConfig.ripple = true;
+  // }
   title = 'pipesApp';
 }

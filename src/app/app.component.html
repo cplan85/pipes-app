@@ -1,4 +1,11 @@
-<h1>{{'Hola MuNdo' | titlecase}}</h1>
+<div class="text-layout">
+
+    <h1>{{'Hola MuNdo' | titlecase}}</h1>
 <h1>{{value | number}}</h1>
 <p>{{obj | json}}</p>
-<button>Change Name</button>
+
+</div>
+
+<button pButton type="button"
+(click)="showName()"
+ label="Change Name"></button>
