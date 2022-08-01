@@ -12,7 +12,7 @@ export class AppComponent {
   name: string = 'Carlos';
   value: number = 230023;
   obj = {
-    name: 'Carlos',
+    name: 'CaRLos',
   };
   showName() {
     console.log(this.name);
