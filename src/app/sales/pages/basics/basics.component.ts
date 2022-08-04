@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BasicsComponent implements OnInit {
   lowerName: string = 'carlos';
   upperName: string = 'Carlos';
-  completeName: string = 'Carlos Planchart';
+  completeName: string = 'carlos planchart';
+
+  date: Date = new Date();
 
   constructor() {}
 
