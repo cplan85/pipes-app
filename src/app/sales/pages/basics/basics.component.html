@@ -7,9 +7,9 @@
 <div class="grid">
     <div class="col-4">
         <p-card header="uppercase"
-        subheader="Carlos"
+        [subheader]="lowerName"
         >
-            1
+            {{lowerName | uppercase}}
         </p-card>
       
     </div>
