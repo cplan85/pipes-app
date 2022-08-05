@@ -48,6 +48,11 @@
                 <li> date | date: 'long'</li>
                 <li> date | date: 'MM/yyyy hh:mm a G'</li>
             </ul>
+            <hr>
+            <ul>
+                <li> date | date: 'long': 'GMT-6'</li>
+                <li> date | date: 'long': 'GMT-4'</li>
+            </ul>
             </p-card>
             </div>
 
@@ -61,6 +66,12 @@
                     <li> {{date | date: 'short'}}</li>
                     <li> {{date | date: 'long'}}</li>
                     <li> {{date | date: 'MM/yyyy hh:mm a G'}}</li>
+                </ul>
+                <hr>
+                <ul>
+                    <li> {{date | date: 'long': 'GMT-6': 'en'}}</li>
+                    <li> {{date | date: 'long': 'GMT-4'}}</li>
+                    <li> {{date | date: 'long': '': 'en'}}</li>
                 </ul>
                 </p-card>
                 </div>

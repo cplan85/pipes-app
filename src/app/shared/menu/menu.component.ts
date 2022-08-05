@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-desktop',
         items: [
           {
-            label: 'texts and dates',
+            label: 'Texts and Dates',
             icon: 'pi pi-align-left',
             routerLink: '/',
           },

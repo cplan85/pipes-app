@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from './shared/shared.module';
 
@@ -10,10 +10,24 @@ import { NotCommonComponent } from './sales/pages/not-common/not-common.componen
 import { BasicsComponent } from './sales/pages/basics/basics.component';
 import { OrderComponent } from './sales/pages/order/order.component';
 
+//change the location of the app
+import localEs from '@angular/common/locales/es';
+import localFr from '@angular/common/locales/fr';
+import { registerLocaleData } from '@angular/common';
+// you need to include this in order to include other languages.
+registerLocaleData(localEs);
+registerLocaleData(localFr);
+
 @NgModule({
-  declarations: [AppComponent, NumbersComponent, NotCommonComponent, BasicsComponent, OrderComponent],
+  declarations: [
+    AppComponent,
+    NumbersComponent,
+    NotCommonComponent,
+    BasicsComponent,
+    OrderComponent,
+  ],
   imports: [BrowserModule, PrimeNgModule, SharedModule, AppRouterModule],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
