@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-not-common',
@@ -61,7 +63,18 @@ export class NotCommonComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  //Async Pipe
+  myObservable = interval(1000); // 0, 1, 2, 3 ,4 ,5 ,6
+
+  promiseValue = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('We have received promise data');
+    }, 3500);
+  });
+
+  constructor() {
+    this.myObservable.subscribe(console.log);
+  }
 
   ngOnInit(): void {}
 }

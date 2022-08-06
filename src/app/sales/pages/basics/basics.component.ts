@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-basics',
@@ -14,5 +15,11 @@ export class BasicsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  dateTime: Date;
+
+  ngOnInit() {
+    timer(0, 1000).subscribe(() => {
+      this.dateTime = new Date();
+    });
+  }
 }

@@ -38,7 +38,7 @@
 
     <div class="grid">
         <div class="col-6">
-            <p-card header="uppercase"
+            <p-card header="Dates"
             [subheader]="lowerName | uppercase"
             >
             <ul>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="col-6">
-                <p-card header="uppercase"
+                <p-card header="Date as new pipes"
                 [subheader]="lowerName | uppercase"
                 >
                 <ul>
@@ -75,3 +75,12 @@
                 </ul>
                 </p-card>
                 </div>
+
+                <div class="col-6">
+                    <p-card header="Running Clock"
+                    subheader="using timer to display current time"
+                    >
+                    <p>{{dateTime | date: 'HH:mm:ss'}}</p>
+                    <p>{{dateTime | date: 'dd MMMM yyyy'}}</p>
+                    </p-card>
+                    </div>
