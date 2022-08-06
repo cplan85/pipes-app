@@ -38,6 +38,29 @@ export class NotCommonComponent implements OnInit {
     return this.clients.pop();
   }
 
+  // KeyValue Pipe
+  person = {
+    name: 'Carlos',
+    age: 35,
+    address: 'Barcelona, Spain',
+  };
+
+  //JsonPipe
+  heroes = [
+    {
+      name: 'Superman',
+      flies: true,
+    },
+    {
+      name: 'Robin',
+      flies: false,
+    },
+    {
+      name: 'Aquaman',
+      flies: false,
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
