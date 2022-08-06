@@ -8,7 +8,7 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  //constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(private primengConfig: PrimeNGConfig) {}
   name: string = 'Carlos';
   value: number = 230023;
   obj = {
@@ -18,8 +18,8 @@ export class AppComponent {
     console.log(this.name);
   }
 
-  // ngOnInit() {
-  //   this.primengConfig.ripple = true;
-  // }
+  ngOnInit() {
+    this.primengConfig.ripple = true;
+  }
   title = 'pipesApp';
 }

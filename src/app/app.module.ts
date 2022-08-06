@@ -10,6 +10,8 @@ import { NotCommonComponent } from './sales/pages/not-common/not-common.componen
 import { BasicsComponent } from './sales/pages/basics/basics.component';
 import { OrderComponent } from './sales/pages/order/order.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //change the location of the app
 import localEs from '@angular/common/locales/es';
 import localFr from '@angular/common/locales/fr';
@@ -26,7 +28,13 @@ registerLocaleData(localFr);
     BasicsComponent,
     OrderComponent,
   ],
-  imports: [BrowserModule, PrimeNgModule, SharedModule, AppRouterModule],
+  imports: [
+    BrowserModule,
+    PrimeNgModule,
+    SharedModule,
+    AppRouterModule,
+    BrowserAnimationsModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
