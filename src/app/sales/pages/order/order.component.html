@@ -1,1 +1,23 @@
-<p>order works!</p>
+<div class="text-layout">
+    <h1>Personalized Pipes</h1>
+    <p>
+       Pipes creados por {{'nosotros' | capitalize: isCapitalized}}
+    </p>
+
+    <button pButton pRipple type="button" label="Toggle uppercase" class="p-button p-button-help" (click)="toggleCapitalized()"></button>
+    </div>
+
+
+    <p-toolbar>
+      <div class="p-toolbar-group-left">
+          <p-button label="New" icon="pi pi-plus"></p-button>
+          <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>
+              
+          <i class="pi pi-bars"></i>
+          
+      </div>
+      
+      <div class="p-toolbar-group-right">
+          <p-button icon="pi pi-search"></p-button>
+      </div>
+  </p-toolbar>

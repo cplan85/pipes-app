@@ -12,6 +12,8 @@ import { OrderComponent } from './sales/pages/order/order.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CapatalizePipe } from './sales/pipes/capitalize.pipe';
+
 //change the location of the app
 import localEs from '@angular/common/locales/es';
 import localFr from '@angular/common/locales/fr';
@@ -27,6 +29,7 @@ registerLocaleData(localFr);
     NotCommonComponent,
     BasicsComponent,
     OrderComponent,
+    CapatalizePipe,
   ],
   imports: [
     BrowserModule,
