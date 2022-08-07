@@ -4,13 +4,12 @@
        Pipes creados por {{'nosotros' | capitalize: isCapitalized}}
     </p>
 
-    <button pButton pRipple type="button" label="Toggle uppercase" class="p-button p-button-help" (click)="toggleCapitalized()"></button>
     </div>
 
 
     <p-toolbar>
-      <div class="p-toolbar-group-left">
-          <p-button label="New" icon="pi pi-plus"></p-button>
+               <div class="p-toolbar-group-left">
+ <p-button label="New" icon="pi pi-plus"></p-button>
           <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>
               
           <i class="pi pi-bars"></i>
@@ -18,6 +17,55 @@
       </div>
       
       <div class="p-toolbar-group-right">
-          <p-button icon="pi pi-search"></p-button>
+
+         <button pButton 
+         pRipple 
+         type="button" 
+         label="Toggle uppercase" 
+         class="p-button p-button-help mr-1 p-button-warning" (click)="toggleCapitalized()"></button>
+
+         <p-button icon="pi pi-sort"
+         label="by name"
+         class="mr-1"
+         ></p-button>
+          <!-- <p-button icon="pi pi-search"></p-button> -->
+          <button 
+          icon="pi pi-sort"
+          pButton pRipple
+           type="button" 
+           label="values" 
+           class="p-button-raised p-button-warning
+           mr-1"></button>
+
+          <button 
+          icon="pi pi-sort"
+          pButton pRipple type="button" label="By color" class="p-button-raised p-button-danger"></button>
+          
       </div>
   </p-toolbar>
+
+  <div class="p-grid">
+   <div class="col mt-2">
+
+      <p-table [value]="[]">
+         <ng-template pTemplate="header">
+             <tr>
+                 <th>Vin</th>
+                 <th>Year</th>
+                 <th>Brand</th>
+                 <th>Color</th>
+             </tr>
+         </ng-template>
+         <ng-template pTemplate="body" let-car>
+             <tr>
+                 <td>{{car.vin}}</td>
+                 <td>{{car.year}}</td>
+                 <td>{{car.brand}}</td>
+                 <td>{{car.color}}</td>
+             </tr>
+         </ng-template>
+     </p-table>
+     
+
+   </div>
+  </div>
