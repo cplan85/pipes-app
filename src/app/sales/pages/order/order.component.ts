@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color, Heroe } from '../../interfaces/sales.interfaces';
 
 @Component({
   selector: 'app-order',
@@ -8,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class OrderComponent implements OnInit {
   isCapitalized: boolean = true;
   items: any;
+  orderBy: string;
   constructor() {}
+
+  heroes: Heroe[] = [
+    { name: 'Superman', flies: true, color: Color.blue },
+    { name: 'Batman', flies: false, color: Color.black },
+    { name: 'Robin', flies: false, color: Color.green },
+    { name: 'Daredevil', flies: false, color: Color.red },
+    { name: 'Green Lantern', flies: true, color: Color.green },
+  ];
 
   ngOnInit(): void {
     this.items = [
@@ -35,5 +45,9 @@ export class OrderComponent implements OnInit {
 
   toggleCapitalized() {
     this.isCapitalized = !this.isCapitalized;
+  }
+
+  changeOrder(value: string) {
+    this.orderBy = value;
   }
 }

@@ -13,6 +13,8 @@ import { OrderComponent } from './sales/pages/order/order.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CapatalizePipe } from './sales/pipes/capitalize.pipe';
+import { FliesPipe } from './sales/pipes/flies.pipe';
+import { OrderPipe } from './sales/pipes/order.pipe';
 
 //change the location of the app
 import localEs from '@angular/common/locales/es';
@@ -30,6 +32,8 @@ registerLocaleData(localFr);
     BasicsComponent,
     OrderComponent,
     CapatalizePipe,
+    FliesPipe,
+    OrderPipe,
   ],
   imports: [
     BrowserModule,

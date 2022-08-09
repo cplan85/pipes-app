@@ -27,19 +27,27 @@
          <p-button icon="pi pi-sort"
          label="by name"
          class="mr-1"
+         (click)="changeOrder('name')"
          ></p-button>
           <!-- <p-button icon="pi pi-search"></p-button> -->
           <button 
           icon="pi pi-sort"
           pButton pRipple
            type="button" 
-           label="values" 
+           label="flies" 
            class="p-button-raised p-button-warning
-           mr-1"></button>
+           mr-1"
+           (click)="changeOrder('flies')"
+           ></button>
 
           <button 
           icon="pi pi-sort"
-          pButton pRipple type="button" label="By color" class="p-button-raised p-button-danger"></button>
+          pButton pRipple 
+          type="button" 
+          label="By color" 
+          class="p-button-raised p-button-danger"
+          (click)="changeOrder('color')"
+          ></button>
           
       </div>
   </p-toolbar>
@@ -47,25 +55,45 @@
   <div class="p-grid">
    <div class="col mt-2">
 
-      <p-table [value]="[]">
+      <p-table [value]="heroes | order: orderBy">
          <ng-template pTemplate="header">
              <tr>
-                 <th>Vin</th>
-                 <th>Year</th>
-                 <th>Brand</th>
+                 <th>Name</th>
+                 <th>Flies</th>
                  <th>Color</th>
+        
              </tr>
          </ng-template>
-         <ng-template pTemplate="body" let-car>
+         <ng-template pTemplate="body" let-heroe>
              <tr>
-                 <td>{{car.vin}}</td>
-                 <td>{{car.year}}</td>
-                 <td>{{car.brand}}</td>
-                 <td>{{car.color}}</td>
+                 <td>{{heroe.name}}</td>
+                 <td>{{heroe.flies| flies}}</td>
+                 <td>{{heroe.color}}</td>
              </tr>
          </ng-template>
      </p-table>
      
-
    </div>
+
+   <div class="col mt-2">
+<!-- the slice pipe assures that there is no mutation -->
+    <p-table [value]="heroes | slice:0">
+       <ng-template pTemplate="header">
+           <tr>
+               <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
+               <th pSortableColumn="flies">Flies<p-sortIcon field="flies"></p-sortIcon></th>
+               <th pSortableColumn="color">Color<p-sortIcon field="color"></p-sortIcon></th>
+      
+           </tr>
+       </ng-template>
+       <ng-template pTemplate="body" let-heroe>
+           <tr>
+               <td>{{heroe.name}}</td>
+               <td>{{heroe.flies| flies}}</td>
+               <td>{{heroe.color}}</td>
+           </tr>
+       </ng-template>
+   </p-table>
+   
+ </div>
   </div>
